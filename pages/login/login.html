@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://lojabagaggio.vteximg.com.br/arquivos/lojabagaggio-favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="prevaultUserLoggedAccess.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="title">
+        <h1>Login</h1>
+        <span>BAGAGGIO | Estágio</span>
+      </div>
+      <form action="" id="login-form">
+        <div class="input-container">
+          <label for="user">Usuário</label>
+          <div class="input-content">
+            <input
+              id="user"
+              name="user"
+              type="text"
+              placeholder="Digite seu usuário"
+            />
+            <i class="ph ph-user-circle"></i>
+          </div>
+          <div id="error-message"></div>
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+    </main>
+  </body>
+  <script src="index.js"></script>
+</html>

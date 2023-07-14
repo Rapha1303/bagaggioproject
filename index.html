@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://lojabagaggio.vteximg.com.br/arquivos/lojabagaggio-favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Desafio de estágio | BAGAGGIO</title>
+  </head>
+  <body>
+    <header>
+      <span>BAGAGGIO</span>
+      <div class="right-side">
+        <button class="logout-button">logout</button>
+        <div class="user-info">
+          <span class="username">Tiago Andrade</span>
+          <div class="avatar-image">
+            <img src="" alt="" class="user-avatar" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="header">
+        <button class="create-users">Cadastrar usuários</button>
+      </div>
+      <div class="container">
+        <span> Não há usuários cadastrados</span>
+      </div>
+      <div class="register-modal">
+        <div class="container">
+          <button class="close-modal-button" type="button" title="Fechar modal">
+            <i class="ph ph-x"></i>
+          </button>
+          <span>Cadastrar usuário</span>
+          <form id="register-form" action="" class="">
+            <div class="name">
+              <label for="name">Nome</label>
+              <input
+                required
+                class="register-user-inputs"
+                name="name"
+                id="name"
+                type="text"
+              />
+            </div>
+
+            <div class="surname">
+              <label for="surname">Sobrenome</label>
+              <input
+                required
+                class="register-user-inputs"
+                name="surname"
+                id="surname"
+                type="text"
+              />
+            </div>
+
+            <div class="email">
+              <label for="email">E-mail</label>
+              <input
+                required
+                class="register-user-inputs"
+                name="email"
+                id="email"
+                type="email"
+              />
+            </div>
+
+            <div class="phone">
+              <label for="phone">Telefone</label>
+              <input
+                required
+                class="register-user-inputs"
+                name="phone"
+                id="phone"
+                type="tel"
+              />
+            </div>
+
+            <div class="cep">
+              <label for="cep">CEP</label>
+              <input
+                required
+                class="register-user-inputs"
+                name="cep"
+                id="cep"
+                type="text"
+                maxlength="8"
+              />
+            </div>
+
+            <div class="aditional street hide">
+              <label for="street">Rua</label>
+              <input
+                type="text"
+                class="register-user-inputs"
+                name="street"
+                id="street"
+              />
+            </div>
+
+            <div class="aditional number hide">
+              <label for="number">Número</label>
+              <input
+                type="text"
+                class="register-user-inputs"
+                name="number"
+                id="number"
+              />
+            </div>
+
+            <div class="aditional neighborhood hide">
+              <label for="neighborhood">Bairro</label>
+              <input
+                type="text"
+                class="register-user-inputs"
+                name="neighborhood"
+                id="neighborhood"
+              />
+            </div>
+
+            <div class="aditional state hide">
+              <label for="state">Estado</label>
+              <input
+                type="text"
+                class="register-user-inputs"
+                name="state"
+                id="state"
+              />
+            </div>
+
+            <div class="habilidades">
+              <label for="abilitites">Habilidades</label>
+              <textarea
+                class="register-user-inputs"
+                required
+                name="abilitites"
+                id="abilitites"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+
+            <button id="modal-submit-button" data-type="" type="submit">
+              Cadastrar
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="informations-modal">
+        <div class="container">
+          <div class="header">
+            <span>Informações do Usuário</span>
+          </div>
+          <button
+            class="close-modal-button info-modal-button"
+            type="button"
+            title="Fechar modal"
+          >
+            <i class="ph ph-x"></i>
+          </button>
+          <div class="content">
+            <span class="id">ID:</span>
+            <span class="name">Nome:</span>
+            <span class="email">E-mail:</span>
+            <span class="phone">Telefone:</span>
+            <span class="street">Rua:</span>
+            <span class="number">Número:</span>
+            <span class="neighborhood">Bairro:</span>
+            <span class="city">Cidade:</span>
+            <span class="state">UF:</span>
+            <span class="cep">CEP:</span>
+            <span class="abilitites">Habilidades:</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script type="module" src="js/events.js"></script>
+  <script type="module" src="js/informationsModal.js"></script>
+  <script type="module" src="js/cep.js"></script>
+  <script type="module" src="js/userCrud.js"></script>
+</html>

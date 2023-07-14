@@ -1,0 +1,349 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+textarea{
+    resize: none;
+}
+
+body{
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+header{
+    padding: 16px 0;
+    width: calc(100% - 96px);
+    max-height: 108px;
+    border-bottom: 1px solid #adadad80;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header > span{
+    font-weight: 600;
+    font-size: 18px;
+    color: #005041;
+}
+
+header .right-side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+header .right-side button{
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #005041;
+    background: #005041;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+header .right-side button:hover{
+    color: #005041;
+    background: transparent;
+}
+
+header .right-side .user-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+header .right-side .user-info .username{
+    display: flex;
+    flex-direction: column;
+}
+
+header .right-side .user-info .username::after{
+    content: 'Software Developer';
+    font-size: 12px;
+    color: #797979aa;
+}
+
+header .right-side .user-info .avatar-image img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+header .right-side .user-info .avatar-image{
+    position: relative;
+}
+
+header .right-side .user-info .avatar-image::before{
+    content: '';
+    width: 52px;
+    height: 52px;
+    border: 2px solid #005041;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+}
+
+main{
+    padding: 16px 0;
+    width: calc(100% - 96px);
+    height: calc(100vh - 86px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+main .header{
+    align-self: flex-start;
+}
+
+main .header button{
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 1px solid #005041;
+    color: #005041;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main .header button:hover{
+    color: #fff;
+    background: #005041;
+}
+
+main .container{
+    margin: auto 0;
+}
+
+main .container > span{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.register-modal, .informations-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(17, 17, 17, 0.301);
+    display: none;
+}
+
+.register-modal.active, .informations-modal.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-modal .container, .informations-modal .container{
+    width: 512px;
+    background: #f5f5f5;
+    border-radius: 24px;
+    padding: 24px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+
+}
+
+
+.close-modal-button{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border: none;
+    background: transparent;
+    cursor: pointer;   
+}
+
+.close-modal-button i{
+    color:#aaaaaa;
+    font-size: 24px;
+}
+
+.register-modal .container form{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+    "name name surname surname"
+    "email email email email"
+    "phone phone phone cep"
+    "street street street number"
+    "neighborhood neighborhood state state"
+    "habilidades habilidades habilidades habilidades"
+    "button button button button"
+    ;
+    gap: 6px;
+}
+
+.register-modal .container form:not(.cep-complete){
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+    "name name surname surname"
+    "email email email email"
+    "phone phone phone cep"
+    "habilidades habilidades habilidades habilidades"
+    "button button button button"
+    ;
+    gap: 6px;
+}
+
+.hide{
+    display: none;
+}
+
+form .name{
+    grid-area: name;
+}
+form .surname{
+    grid-area: surname;
+}
+form .email{
+    grid-area: email;
+}
+form .phone{
+    grid-area: phone;
+}
+form .cep{
+    grid-area: cep;
+}
+form .habilidades{
+    grid-area: habilidades;
+}
+form #modal-submit-button{
+    grid-area: button;
+}
+form .neighborhood{
+    grid-area: neighborhood;
+}
+form .street{
+    grid-area: street;
+}
+form .state{
+    grid-area: state;
+}
+form .number{
+    grid-area: number;
+}
+
+.register-modal .container form div:not(.hide){
+    display: flex;
+    flex-direction: column;
+}
+
+.register-modal .container form div label{
+    font-size: 12px;
+    color: #474747;
+}
+
+.register-modal .container form div input, .register-modal .container form div textarea{
+    padding: 12px 8px;
+    border: 1px solid #aaaaaa;
+    border-radius: 6px;
+    outline: none;
+}
+.register-modal .container form div .habilidades, textarea{
+    max-height: 56px;
+}
+
+.register-modal .container form #modal-submit-button{
+    padding: 12px 18px;
+    max-height: 39px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #005041;
+    color: #fff;
+    margin-top: 24px;
+}
+
+.informations-modal .container .header{
+    display: flex;
+    align-items: center;
+    height: 24px;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: 600;
+
+    position: relative;
+}
+
+.informations-modal .container .content{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.informations-modal .container .content span{
+    font-size: 16px;
+    color: #646464;
+}
+
+table{
+    border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    font-weight: 400;
+    background-color: #005041;
+    color: white;
+    width: 180px;
+}
+table tbody tr td:not(.actions){
+    max-width: 120px;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+table tbody tr td.actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+table tbody tr td button{
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+table tbody tr td button i{
+    font-size: 18px;
+    color: #646464;
+}
+
+table tbody tr td .delete-user i{
+    color: rgb(226, 78, 78);
+}
